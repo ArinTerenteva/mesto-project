@@ -1,0 +1,11 @@
+.profile__row-two {
+  max-width:  336px;
+}
+
+@media (max-width: 767px) {
+  .profile__row-two {
+    max-width: 282px;
+  }
+}
+
+

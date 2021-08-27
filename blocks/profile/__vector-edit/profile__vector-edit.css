@@ -1,0 +1,14 @@
+.profile__vector-edit {
+  width: 10px;
+  height: 10px;
+  background-image: url(../../../images/vector-pen.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .profile__vector-edit {
+    width: 7.5px;
+    height: 7.5px;
+  }
+}

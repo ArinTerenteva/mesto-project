@@ -1,0 +1,14 @@
+.profile__vector-add {
+  width: 22px;
+  height: 22px;
+  background-image: url(../../../images/vector-plus.svg);
+  background-size: contain;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .profile__vector-add {
+    width: 16px;
+    height: 16px;
+  }
+}
