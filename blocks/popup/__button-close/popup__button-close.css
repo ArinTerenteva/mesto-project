@@ -1,4 +1,6 @@
 .popup__button-close {
+  background: url(../../../images/vector-close.svg) center;
+  background-size: cover;
   border: none;
   width: 32px;
   height: 32px;
@@ -7,7 +9,6 @@
   padding: 0;
   right: -44px;
   top: -42px;
-  background-color: transparent;
 }
 
 .popup__button-close:hover {

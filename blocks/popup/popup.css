@@ -6,10 +6,12 @@
   position: fixed;
   top: 0;
   left: 0;
+  visibility: hidden;
   transition: visibility 1s, opacity 1s linear;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.popup_opened {
-  display: block;
-}
+

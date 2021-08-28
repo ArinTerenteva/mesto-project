@@ -1,8 +1,11 @@
 .element__button-like {
+  width: 22px;
+  height: 19px;
+  background: url(../../../images/vector-like.svg) center no-repeat;
+  background-size: contain;
   background-color: transparent;
   transition: 0.3s;
   margin: 0;
-  padding: 0;
   margin: 5px 5px 1px 0;
   border: none;
   transition: 0.3s;
@@ -16,4 +19,5 @@
 .element__button-like:active {
   cursor: pointer;
   background: url(../../../images/vector-like-active.svg) center no-repeat;
+  background-size: contain;
 }
