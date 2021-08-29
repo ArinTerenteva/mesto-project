@@ -9,5 +9,6 @@
 @media (max-width: 767px) {
   .profile__avatar-image {
     margin: 0 auto;
+    margin-bottom: 22.25px;
   }
 }

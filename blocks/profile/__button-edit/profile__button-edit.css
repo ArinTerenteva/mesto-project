@@ -1,7 +1,9 @@
 .profile__button-edit {
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  background: url(../../../images/vector-pen.svg) center;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
   background-color: transparent;
   border: 1px solid #ffffff;
   padding: 7px;
@@ -18,6 +20,7 @@
   .profile__button-edit {
     width: 18px;
     height: 18px;
+    background-size: 7.5px 7.5px;
     padding: 5.25px;
     margin-top: 8px;
     margin-right: 19px;
