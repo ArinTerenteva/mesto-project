@@ -1,0 +1,6 @@
+.element__button-like_active {
+  cursor: pointer;
+  background: url(../../../../images/vector-like-active.svg) center no-repeat;
+  background-size: contain;
+}
+

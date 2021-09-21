@@ -6,11 +6,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity 1s linear;
-  display: none;
+  transition: opacity 1s linear, visibility 1s;
+  display: flex;
   justify-content: center;
   align-items: center;
-
+  visibility: hidden;
+  opacity: 0;
 }
 
 
