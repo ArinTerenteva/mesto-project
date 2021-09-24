@@ -83,11 +83,6 @@ function createCard(element) {
 function addCard(evt) {
   evt.preventDefault();
 
-  const addCards = {
-    name: "",
-    link: "",
-  };
-
   cards.prepend(
     createCard({
       name: titleInput.value,
