@@ -1,3 +1,6 @@
+import { initialCards } from "./initial-cards.js";
+import { enableValidation } from "./validation.js";
+
 const buttonEdit = document.querySelector(".profile__button-edit");
 const popupProfile = document.querySelector(".popup_type_profile");
 const buttonCloseEdit = document.querySelector("#button-close-edit");
@@ -27,12 +30,24 @@ const popupImgPic = document.querySelector(".popup__pic");
 const popupImgText = document.querySelector(".popup__text");
 const buttonCloseImg = document.querySelector("#button-close-img");
 
+enableValidation({
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  buttonSelector: ".form__button-submit",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__input-error_active",
+});
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupEsc);
+  document.addEventListener("click", closePopupOnClick);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closePopupEsc);
+  document.removeEventListener("mouseup", closePopupOnClick);
 }
 
 buttonCloseEdit.addEventListener("click", function () {
@@ -50,6 +65,11 @@ function editProfile(evt) {
 
 profileForm.addEventListener("submit", editProfile);
 
+function updateInputValue(inputElement, value) {
+  inputElement.value = value;
+  inputElement.dispatchEvent(new Event("input"));
+}
+
 newCardOpenButton.addEventListener("click", function () {
   openPopup(newCardPopup);
 });
@@ -58,6 +78,8 @@ buttonEdit.addEventListener("click", function () {
   openPopup(popupProfile);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
+  updateInputValue(jobInput, profileSubtitle.textContent);
+  updateInputValue(nameInput, profileTitle.textContent);
 });
 
 buttonCloseAdd.addEventListener("click", function () {
@@ -124,3 +146,21 @@ function createCards(initialCards, cards) {
 }
 
 createCards(initialCards, cards);
+
+//закртие попапа при клике по кнопке esc
+
+const closePopupEsc = (evt) => {
+  if (evt.key === "Escape") {
+    const popupEsc = document.querySelector(".popup_opened");
+    closePopup(popupEsc);
+  }
+};
+
+//закртие попапа при клике вне попапа
+
+const closePopupOnClick = (evt) => {
+  const popupContainerOpend = document.querySelector(".popup_opened");
+  if (popupContainerOpend === evt.target) {
+    closePopup(popupContainerOpend);
+  }
+};

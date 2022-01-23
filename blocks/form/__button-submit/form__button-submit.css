@@ -1,4 +1,4 @@
-.popup__button-submit {
+.form__button-submit {
   width: 100%;
   height: 50px;
   font-size: 18px;
@@ -13,13 +13,21 @@
   font-family: inherit;
 }
 
-.popup__button-submit:hover {
+.form__button-submit:hover {
   cursor: pointer;
   opacity: 60%;
 }
 
+.form__button-submit:disabled {
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  cursor: default;
+  opacity: 100%;
+}
+
 @media (max-width: 767px) {
-  .popup__button-submit {
+  .form__button-submit {
     margin-top: 15px;
     max-width: 238px;
     font-size: 14px;

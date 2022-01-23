@@ -48,24 +48,33 @@
           id="button-close-edit"
         ></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form name="profile-form" id="profile-form">
+        <!--form 1-->
+        <form class="form" name="profile-form" id="profile-form" novalidate>
           <input
             type="text"
-            class="popup__form-item"
+            class="form__input"
             id="name"
             name="name"
             placeholder="Имя"
+            required 
+            minlength="2"
+            maxlength="40"
           />
+          <span class="form__input-error" id="name-error"></span>
           <input
             type="text"
-            class="popup__form-item"
+            class="form__input"
             id="information"
             name="information"
             placeholder="О себе"
+            required 
+            minlength="2"
+            maxlength="200"
           />
+          <span class="form__input-error" id="information-error"></span>
           <button
             type="submit"
-            class="popup__button-submit"
+            class="form__button-submit"
             id="subject"
             name="subject"
           >
@@ -82,24 +91,31 @@
           id="button-close-add"
         ></button>
         <h2 class="popup__title">Новое место</h2>
-        <form name="cards-form" id="cards-form">
+        <!--form 2-->
+        <form class="form" name="cards-form" id="cards-form" novalidate>
           <input
             type="text"
-            class="popup__form-item"
+            class="form__input"
             id="title"
             name="title"
             placeholder="Название"
+            required 
+            minlength="2"
+            maxlength="30"
           />
+          <span class="form__input-error" id="title-error"></span>
           <input
-            type="text"
-            class="popup__form-item"
+            type="url"
+            class="form__input"
             id="link"
             name="link"
             placeholder="Ссылка на картинку"
+            required 
           />
+          <span class="form__input-error" id="link-error"></span>
           <button
             type="submit"
-            class="popup__button-submit"
+            class="form__button-submit"
             id="create"
             name="create"
           >
@@ -122,7 +138,8 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-    <script src="./scripts/initial-cards.js"></script>
-    <script src="./scripts/script.js"></script>
+    <!--<script src="./scripts/validation.js"></script>
+    <script src="./scripts/initial-cards.js"></script>-->
+    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>
