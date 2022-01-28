@@ -1,34 +1,37 @@
-import { initialCards } from "./initial-cards.js";
+/*import { initialCards } from "./initial-cards.js";*/
 import { enableValidation } from "./validation.js";
+import { addCard } from "./card.js";
+import { editProfile, openPopup, updateInputValue} from "./modal.js";
 
 const buttonEdit = document.querySelector(".profile__button-edit");
-const popupProfile = document.querySelector(".popup_type_profile");
-const buttonCloseEdit = document.querySelector("#button-close-edit");
-const profileForm = popupProfile.querySelector("#profile-form");
-const nameInput = popupProfile.querySelector("#name");
-const jobInput = popupProfile.querySelector("#information");
+export const popupProfile = document.querySelector(".popup_type_profile");
+/*const buttonCloseEdit = document.querySelector("#button-close-edit");*/
+export const profileForm = popupProfile.querySelector("#profile-form");
+export const nameInput = popupProfile.querySelector("#name");
+export const jobInput = popupProfile.querySelector("#information");
 
-const profileTitle = document.querySelector(".profile__title");
-const profileSubtitle = document.querySelector(".profile__subtitle");
+export const profileTitle = document.querySelector(".profile__title");
+export const profileSubtitle = document.querySelector(".profile__subtitle");
 
-const buttonSubmitEdit = popupProfile.querySelector("#subject");
+//const buttonSubmitEdit = popupProfile.querySelector("#subject"); прикол
 
 const newCardOpenButton = document.querySelector(".profile__button-add");
-const newCardPopup = document.querySelector(".popup_type_card-add");
-const buttonCloseAdd = document.querySelector("#button-close-add");
+export const newCardPopup = document.querySelector(".popup_type_card-add");
+/*const buttonCloseAdd = document.querySelector("#button-close-add");*/
 
-const cards = document.querySelector(".elements");
-const cardTemplate = document.querySelector("#element-template").content;
+/*const cards = document.querySelector(".elements");
+const cardTemplate = document.querySelector("#element-template").content;*/
 
-const cardsForm = document.querySelector("#cards-form");
-const titleInput = newCardPopup.querySelector("#title");
-const linkInput = newCardPopup.querySelector("#link");
-const buttonSubmitAdd = newCardPopup.querySelector("#create");
+export const cardsForm = document.querySelector("#cards-form");
+/*const titleInput = newCardPopup.querySelector("#title");
+const linkInput = newCardPopup.querySelector("#link");*/
 
-const popupImg = document.querySelector(".popup_type_picture");
+//const buttonSubmitAdd = newCardPopup.querySelector("#create"); прикол
+
+/*const popupImg = document.querySelector(".popup_type_picture");
 const popupImgPic = document.querySelector(".popup__pic");
 const popupImgText = document.querySelector(".popup__text");
-const buttonCloseImg = document.querySelector("#button-close-img");
+const buttonCloseImg = document.querySelector("#button-close-img");*/
 
 enableValidation({
   formSelector: ".form",
@@ -38,37 +41,37 @@ enableValidation({
   errorClass: "form__input-error_active",
 });
 
-function openPopup(popup) {
+/*function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
   document.addEventListener("click", closePopupOnClick);
 }
 
-function closePopup(popup) {
+export function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
   document.removeEventListener("mouseup", closePopupOnClick);
-}
+}*/
 
-buttonCloseEdit.addEventListener("click", function () {
+/*buttonCloseEdit.addEventListener("click", function () {
   closePopup(popupProfile);
-});
+});*/
 
-function editProfile(evt) {
+/*function editProfile(evt) {
   evt.preventDefault();
   const nameValue = nameInput.value;
   const jobValue = jobInput.value;
   profileTitle.textContent = nameValue;
   profileSubtitle.textContent = jobValue;
   closePopup(popupProfile);
-}
+}*/
 
 profileForm.addEventListener("submit", editProfile);
 
-function updateInputValue(inputElement, value) {
+/*function updateInputValue(inputElement, value) {
   inputElement.value = value;
   inputElement.dispatchEvent(new Event("input"));
-}
+}*/
 
 newCardOpenButton.addEventListener("click", function () {
   openPopup(newCardPopup);
@@ -82,11 +85,11 @@ buttonEdit.addEventListener("click", function () {
   updateInputValue(nameInput, profileTitle.textContent);
 });
 
-buttonCloseAdd.addEventListener("click", function () {
+/*buttonCloseAdd.addEventListener("click", function () {
   closePopup(newCardPopup);
-});
+});*/
 
-function createCard(element) {
+/*function createCard(element) {
   const cardElement = cardTemplate.cloneNode(true).querySelector(".element");
   const cardImages = cardElement.querySelector(".element__images");
   cardElement.querySelector(".element__title").textContent = element.name;
@@ -113,11 +116,11 @@ function addCard(evt) {
   );
   cardsForm.reset();
   closePopup(newCardPopup);
-}
+}*/
 
 cardsForm.addEventListener("submit", addCard);
 
-function openImg(evt) {
+/*function openImg(evt) {
   popupImgPic.src = evt.target.src;
   popupImgPic.alt = evt.target.alt;
   popupImgText.textContent = evt.target.alt;
@@ -145,8 +148,10 @@ function createCards(initialCards, cards) {
   });
 }
 
-createCards(initialCards, cards);
+createCards(initialCards, cards);*/
 
+
+/*
 //закртие попапа при клике по кнопке esc
 
 const closePopupEsc = (evt) => {
@@ -163,4 +168,4 @@ const closePopupOnClick = (evt) => {
   if (popupContainerOpend === evt.target) {
     closePopup(popupContainerOpend);
   }
-};
+};*/
