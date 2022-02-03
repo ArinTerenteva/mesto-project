@@ -1,4 +1,11 @@
-import { nameInput, jobInput, profileTitle, profileSubtitle, popupProfile } from "./index.js";
+import {
+  nameInput,
+  jobInput,
+  profileTitle,
+  profileSubtitle,
+  popupProfile,
+  newCardPopup,
+} from "./index.js";
 
 const buttonCloseEdit = document.querySelector("#button-close-edit");
 const buttonCloseAdd = document.querySelector("#button-close-add");
@@ -6,13 +13,13 @@ const buttonCloseAdd = document.querySelector("#button-close-add");
 export function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupEsc);
-  document.addEventListener("click", closePopupOnClick);
+  popup.addEventListener("click", closePopupOnClick);
 }
 
 export function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
-  document.removeEventListener("mouseup", closePopupOnClick);
+  popup.removeEventListener("mouseup", closePopupOnClick);
 }
 
 buttonCloseEdit.addEventListener("click", function () {

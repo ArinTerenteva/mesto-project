@@ -1,7 +1,8 @@
-import { initialCards } from "./initial-cards.js";
+import { initialCards } from "./initialCards.js";
 import { cardsForm } from "./index.js";
 import { newCardPopup } from "./index.js";
 import { closePopup } from "./modal.js";
+import { openPopup } from "./modal.js";
 
 const cards = document.querySelector(".elements");
 const cardTemplate = document.querySelector("#element-template").content;
