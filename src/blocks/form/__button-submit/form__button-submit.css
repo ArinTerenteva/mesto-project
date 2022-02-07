@@ -13,17 +13,17 @@
   font-family: inherit;
 }
 
-.form__button-submit:hover {
-  cursor: pointer;
-  opacity: 60%;
-}
-
 .form__button-submit:disabled {
   color: #c4c4c4;
   border: 1px solid #c4c4c4;
   background-color: transparent;
   cursor: default;
   opacity: 100%;
+}
+
+.form__button-submit:hover {
+  cursor: pointer;
+  opacity: 60%;
 }
 
 @media (max-width: 767px) {

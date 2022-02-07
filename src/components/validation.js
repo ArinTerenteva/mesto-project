@@ -1,5 +1,4 @@
-//проверить форму на валидность
-const isFormValid = (inputList) => {
+export const isFormValid = (inputList) => {
   return inputList.every((inputElement) => inputElement.validity.valid);
 };
 

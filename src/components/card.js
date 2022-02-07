@@ -15,6 +15,7 @@ const buttonCloseImg = document.querySelector("#button-close-img");
 const titleInput = document.querySelector("#title");
 const linkInput = document.querySelector("#link");
 
+const buttonSubmitCreate = document.querySelector("#create");
 
 function createCard(element) {
   const cardElement = cardTemplate.cloneNode(true).querySelector(".element");
@@ -42,6 +43,7 @@ export function addCard(evt) {
     })
   );
   cardsForm.reset();
+  buttonSubmitCreate.disabled = true;
   closePopup(newCardPopup);
 }
 
